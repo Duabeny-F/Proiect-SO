@@ -132,7 +132,7 @@ int main(int argc, char **argv) {
     char symlink_path[256], logfile_path[256];
     snprintf(logfile_path, sizeof(logfile_path), "%s/%s", argv[2], LOG_FILE);
     snprintf(symlink_path, sizeof(symlink_path), "logged_hunt-%s", argv[2]);
-    symlink(logfile_path, symlink_path);
+    //symlink(logfile_path, symlink_path);
 
     return 0;
 }
