@@ -35,10 +35,10 @@ void log_operation(char *hunt_id, char *message) {
 }
 
 void create_hunt_dir(char *hunt_id) {
-    mkdir(hunt_id);
-    chmod(hunt_id, 0755);
-}
-
+    if (mkdir(hunt_id, 0755) < 0) {
+        perror("mkdir");
+        exit(1);
+    }
 void add_treasure(char *hunt_id) {
     Treasure tr;
     char path[256];
